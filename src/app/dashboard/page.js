@@ -78,6 +78,10 @@ const Dashboard = () => {
         <div className={styles.posts}>
           {isLoading ? (
             <Loading />
+          ) : data?.length === 0 ? (
+            <div className={styles.noPostContainer}>
+              <h1 className={styles.title}>You have no posts!</h1>
+            </div>
           ) : (
             data?.map((post) => (
               <div className={styles.post} key={post._id}>
