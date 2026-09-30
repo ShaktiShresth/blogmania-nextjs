@@ -1,17 +1,23 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import Post from "@/models/Post";
+import connectDB from "@/utils/db";
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/posts", {
-    cache: "no-store",
-  });
+  await connectDB();
+  const posts = await Post.find().lean();
+  return JSON.parse(JSON.stringify(posts));
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data!");
-  }
+  // const res = await fetch("http://localhost:3000/api/posts", {
+  //   cache: "no-store",
+  // });
 
-  return res.json();
+  // if (!res.ok) {
+  //   throw new Error("Failed to fetch data!");
+  // }
+
+  // return res.json();
 }
 
 const Blog = async () => {
