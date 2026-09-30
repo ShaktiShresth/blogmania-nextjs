@@ -46,9 +46,10 @@ const Register = () => {
           placeholder="Username"
           required
           className={styles.input}
+          minLength={4}
         />
         <input
-          type="text"
+          type="email"
           placeholder="Email"
           required
           className={styles.input}
@@ -58,6 +59,7 @@ const Register = () => {
           placeholder="Password"
           required
           className={styles.input}
+          minLength={4}
         />
         <button className={styles.button}>Register</button>
         {error && "Something went wrong!"}

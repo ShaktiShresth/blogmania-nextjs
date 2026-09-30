@@ -4,6 +4,18 @@
   gap: 20px;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 32px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
 }
 
 .form {
@@ -32,4 +44,71 @@
   border-radius: 5px;
   color: #eee;
   font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #4fb783;
+  transform: scale(1.02);
+}
+
+.or {
+  color: #bbb;
+  font-size: 16px;
+}
+
+.link {
+  color: #53c28b;
+  font-size: 16px;
+  text-align: center;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: #e53e3e;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 16px;
+    gap: 15px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .form,
+  .button {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .input {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .button {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .or {
+    font-size: 14px;
+  }
+
+  .link {
+    font-size: 14px;
+  }
 }

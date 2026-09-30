@@ -3,16 +3,20 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
+  padding: 20px;
 }
 
 .title {
   color: #bbb;
+  font-size: 32px;
+  text-align: center;
 }
 
 .subtitle {
   font-size: 20px;
   margin-bottom: 30px;
   color: #bbb;
+  text-align: center;
 }
 
 .form {
@@ -42,29 +46,71 @@
   border-radius: 5px;
   color: #eee;
   font-weight: bold;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .button:hover {
   background-color: #49b07d;
+  transform: scale(1.02);
 }
 
 .or {
   color: #bbb;
+  font-size: 16px;
 }
 
 .link {
-  text-decoration: underline;
-  color: #7d7c7c;
+  color: #53c28b;
+  font-size: 16px;
+  text-align: center;
 }
 
 .link:hover {
-  color: rgb(61, 61, 61);
+  text-decoration: underline;
 }
 
-.google {
-  background-color: rgba(228, 97, 50, 0.72);
+.error {
+  color: #e53e3e;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
 }
 
-.google:hover {
-  background-color: rgba(228, 97, 50, 0.803);
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 16px;
+    gap: 15px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .form,
+  .button {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .input {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .button {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .or {
+    font-size: 14px;
+  }
 }
