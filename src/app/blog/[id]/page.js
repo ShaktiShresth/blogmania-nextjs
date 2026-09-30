@@ -2,17 +2,28 @@ import Image from "next/image";
 import React from "react";
 import styles from "./page.module.css";
 import { notFound } from "next/navigation";
+import connectDB from "@/utils/db";
+import Post from "@/models/Post";
 
 async function getData(id) {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
-    cache: "no-store",
-  });
+  // const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+  //   cache: "no-store",
+  // });
 
-  if (!res.ok) {
-    return notFound();
-  }
+  // if (!res.ok) {
+  //   return notFound();
+  // }
 
-  return res.json();
+  // return res.json();
+
+  await connectDB();
+
+  const post = await Post.findById(id).lean();
+
+  if (!post) notFound();
+
+  // Convert Mongoose ObjectId / Document to plain JSON for RSC
+  return JSON.parse(JSON.stringify(post));
 }
 
 export async function generateMetadata({ params }) {
