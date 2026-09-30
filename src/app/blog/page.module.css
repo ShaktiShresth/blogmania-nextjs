@@ -46,6 +46,11 @@
   line-height: 1.5;
 }
 
+.noPostContainer .title {
+  color: #53c28b;
+  text-align: center;
+}
+
 /* ---------- Mobile ---------- */
 @media (max-width: 768px) {
   .mainContainer {

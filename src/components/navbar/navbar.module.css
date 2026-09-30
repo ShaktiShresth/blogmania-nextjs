@@ -52,6 +52,10 @@
   transform: scale(1.02);
 }
 
+.username {
+  color: gray;
+}
+
 /* ---------- Hamburger button ---------- */
 .hamburger {
   display: none;

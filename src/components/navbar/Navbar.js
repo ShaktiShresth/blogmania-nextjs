@@ -60,6 +60,12 @@ const Navbar = () => {
           );
         })}
 
+        {session.status === "authenticated" && session.data?.user?.name && (
+          <span className={styles.username}>
+            ({session.data.user.name.toLowerCase()})
+          </span>
+        )}
+
         {session.status === "authenticated" && (
           <button
             className={styles.logout}

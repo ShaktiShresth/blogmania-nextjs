@@ -25,6 +25,11 @@ const Blog = async () => {
 
   return (
     <div className={styles.mainContainer}>
+      {data.length === 0 && (
+        <div className={styles.noPostContainer}>
+          <h1 className={styles.title}>No posts available!</h1>
+        </div>
+      )}
       {data.map((item) => (
         <Link
           href={`/blog/${item._id}`}
